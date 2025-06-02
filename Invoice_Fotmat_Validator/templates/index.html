@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Invoice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form class="form" method="POST" enctype="multipart/form-data" autocomplete="off">
+        <div class="control">
+            <h1>Upload Invoice</h1>
+        </div>
+
+        {% if message %}
+        <div class="control" style="color: red; text-align: center;">
+            {{ message }}
+        </div>
+        {% endif %}
+
+        <div class="control block-cube block-input">
+            <input type="file" id="file-upload" name="invoice_file" required hidden>
+            <label for="file-upload" id="file-label">Choose Invoice File</label>
+            <div class="bg-top"><div class="bg-inner"></div></div>
+            <div class="bg-right"><div class="bg-inner"></div></div>
+            <div class="bg"><div class="bg-inner"></div></div>
+        </div>
+
+        <div class="control block-cube block-input">
+            <input type="text" name="program_id" placeholder="Enter Program ID" required>
+            <div class="bg-top"><div class="bg-inner"></div></div>
+            <div class="bg-right"><div class="bg-inner"></div></div>
+            <div class="bg"><div class="bg-inner"></div></div>
+        </div>
+
+        <button class="btn block-cube block-cube-hover" type="submit">
+            <div class="bg-top"><div class="bg-inner"></div></div>
+            <div class="bg-right"><div class="bg-inner"></div></div>
+            <div class="bg"><div class="bg-inner"></div></div>
+            <div class="text">Validate Invoice</div>
+        </button>
+
+        <div class="control" style="text-align: center; margin-top: 20px;">
+            <a href="{{ url_for('logout') }}" style="color: #fff; text-decoration: underline;">Logout</a>
+        </div>
+    </form>
+
+    <script>
+    const input = document.getElementById('file-upload');
+    const label = document.getElementById('file-label');
+
+    input.addEventListener('change', function () {
+      const fileName = this.files[0] ? this.files[0].name : 'Choose Invoice File';
+      label.textContent = fileName;
+    });
+    </script>
+</body>
+</html>

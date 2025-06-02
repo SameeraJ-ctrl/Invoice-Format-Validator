@@ -1,0 +1,128 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #212121;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    font-size: 23px;
+}
+
+.form {
+    width: 300px;
+    padding: 64px 15px 24px;
+    margin: 0 auto;
+}
+
+    .form .control {
+        margin: 0 0 24px;
+    }
+
+        .form .control input[type="text"],
+        .form .control input[type="password"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-family: monospace, serif;
+            letter-spacing: 0.05em;
+            font-size: 16px;
+        }
+
+        .form .control input:hover,
+        .form .control input:focus {
+            outline: none;
+            border: 0;
+        }
+
+    .form .btn {
+        width: 100%;
+        display: block;
+        padding: 14px 16px;
+        background: transparent;
+        outline: none;
+        border: 0;
+        color: #fff;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+
+.block-cube {
+    position: relative;
+}
+
+    .block-cube .bg-top {
+        position: absolute;
+        height: 10px;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(52,9,121,1) 37%, rgba(0,212,255,1) 94%);
+        bottom: 100%;
+        left: 5px;
+        right: -5px;
+        transform: skew(-45deg, 0);
+    }
+
+    .block-cube .bg,
+    .block-cube .bg-right {
+        position: absolute;
+        background: rgba(0,212,255,1);
+        z-index: 0;
+    }
+
+    .block-cube .bg-inner {
+        background: #212121;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .block-cube.block-input input {
+        position: relative;
+        z-index: 2;
+    }
+
+/* Custom File Label Styling */
+#file-label {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: monospace, serif;
+    transition: background 0.2s ease-in-out;
+}
+
+    #file-label:hover {
+        color: #0ff;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+#file-upload {
+    display: none;
+}
+
+/* Cube-style interaction improvements */
+.block-cube.block-input input:focus ~ .bg-inner {
+    top: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.block-cube.block-input:hover .bg-inner,
+.block-cube.block-input:focus-within .bg-inner {
+    background: rgba(255, 255, 255, 0.8);
+}
