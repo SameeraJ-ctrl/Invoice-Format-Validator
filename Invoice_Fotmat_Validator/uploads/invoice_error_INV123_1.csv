@@ -1,0 +1,4 @@
+ExtraColumn1,InvoiceID,CustomerName,Weight,ASW,Volume,Amount,Currency,InvoiceDate
+random1,,John Doe,12.5,1.2,10.5,100.00,USD,2023/01/15
+random2,123456,Jane Smith,abc,2.3,20.3,xyz,EUR,25-12-2023
+random3,INV-003,Bob Lee,45.0,3.4,30.1,300,JPY,2023-13-01

@@ -1,0 +1,4 @@
+Customer Code,Invoice Number,Invoice Date,Station Code,Blank1,Weight,,Volume,Blank3,Blank4,Blank5,Blank6,Blank7,Blank8,Currency Code,Amount
+CUST001,INV0001,20240501,ST001,,123.45,,10.5,,,,,,,USD,1000.5
+CUST002,INV0002,20240502,ST002,,234.56,,20,,,,,,,EUR,2000.75
+CUST003,INV0003,20240503,ST003,,456.78,,,,,,,,,JPY,3000.25
