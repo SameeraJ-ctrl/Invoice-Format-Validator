@@ -1,0 +1,144 @@
+{
+  "INV123": {
+    "columns": [
+      {
+        "name": "Customer Code",
+        "required": true,
+        "type": "string",
+        "position": 0
+      },
+      {
+        "name": "Invoice Number",
+        "required": true,
+        "type": "string",
+        "position": 1
+      },
+      {
+        "name": "Invoice Date",
+        "required": true,
+        "type": "date",
+        "format": "yyyymmdd",
+        "position": 2
+      },
+      {
+        "name": "Station Code",
+        "required": true,
+        "type": "string",
+        "position": 3
+      },
+      {
+        "name": "Weight",
+        "required": true,
+        "type": "float",
+        "position": 6
+      },
+      {
+        "name": "Volume",
+        "required": false,
+        "type": "float",
+        "position": 7
+      },
+      {
+        "name": "Currency Code",
+        "required": true,
+        "type": "string",
+        "position": 14
+      },
+      {
+        "name": "Amount",
+        "required": true,
+        "type": "float",
+        "position": 15
+      }
+    ]
+  },
+  "INV456": {
+    "columns": [
+      {
+        "name": "Invoice Identifier",
+        "required": true,
+        "type": "string",
+        "position": 1
+      },
+      {
+        "name": "Invoice Date",
+        "required": true,
+        "type": "date",
+        "format": "yyyymmdd",
+        "position": 2
+      },
+      {
+        "name": "Weight",
+        "required": true,
+        "type": "float",
+        "position": 6
+      },
+      {
+        "name": "Invoice Type",
+        "required": true,
+        "type": "string",
+        "position": 10
+      },
+      {
+        "name": "Charge Amount",
+        "required": true,
+        "type": "float",
+        "position": 15
+      }
+    ]
+  },
+  "INV908": {
+    "columns": [
+      {
+        "name": "Invoice Number",
+        "required": true,
+        "type": "string",
+        "position": 1
+      },
+      {
+        "name": "Due Date",
+        "required": true,
+        "type": "date",
+        "format": "yyyymmdd",
+        "position": 4
+      },
+      {
+        "name": "Billing Source",
+        "required": true,
+        "type": "string",
+        "position": 5
+      },
+      {
+        "name": "Invoice Date",
+        "required": true,
+        "type": "date",
+        "format": "yyyymmdd",
+        "position": 2
+      },
+      {
+        "name": "Total Tax",
+        "required": true,
+        "type": "float",
+        "position": 12
+      },
+      {
+        "name": "Total Discount",
+        "required": false,
+        "type": "float",
+        "position": 13
+      },
+      {
+        "name": "Amount",
+        "required": true,
+        "type": "float",
+        "position": 15
+      },
+      {
+        "name": "Currency Code",
+        "required": true,
+        "type": "string",
+        "position": 14
+      }
+    ]
+  }
+}
