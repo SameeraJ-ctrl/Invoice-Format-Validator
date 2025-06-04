@@ -55,35 +55,35 @@
   "INV456": {
     "columns": [
       {
-        "name": "Invoice Identifier",
+        "name": "Invoice Number",
         "required": true,
         "type": "string",
-        "position": 1
+        "position": 0
       },
       {
         "name": "Invoice Date",
         "required": true,
         "type": "date",
-        "format": "yyyymmdd",
-        "position": 2
+        "format": "ddmmyyyy",
+        "position": 1
       },
       {
         "name": "Weight",
         "required": true,
         "type": "float",
-        "position": 6
+        "position": 5
       },
       {
         "name": "Invoice Type",
         "required": true,
         "type": "string",
-        "position": 10
+        "position": 9
       },
       {
         "name": "Charge Amount",
         "required": true,
         "type": "float",
-        "position": 15
+        "position": 14
       }
     ]
   },
@@ -93,39 +93,39 @@
         "name": "Invoice Number",
         "required": true,
         "type": "string",
-        "position": 1
+        "position": 0
       },
       {
         "name": "Due Date",
         "required": true,
         "type": "date",
         "format": "yyyymmdd",
-        "position": 4
+        "position": 3
       },
       {
         "name": "Billing Source",
         "required": true,
         "type": "string",
-        "position": 5
+        "position": 4
       },
       {
         "name": "Invoice Date",
         "required": true,
         "type": "date",
         "format": "yyyymmdd",
-        "position": 2
+        "position": 1
       },
       {
         "name": "Total Tax",
         "required": true,
         "type": "float",
-        "position": 12
+        "position": 11
       },
       {
         "name": "Total Discount",
         "required": false,
         "type": "float",
-        "position": 13
+        "position": 12
       },
       {
         "name": "Amount",
