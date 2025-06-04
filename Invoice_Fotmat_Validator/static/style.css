@@ -23,8 +23,7 @@ h1 {
         margin: 0 0 24px;
     }
 
-        .form .control input[type="text"],
-        .form .control input[type="password"] {
+        .form .control input {
             width: 100%;
             padding: 14px 16px;
             border: 0;
@@ -35,11 +34,11 @@ h1 {
             font-size: 16px;
         }
 
-        .form .control input:hover,
-        .form .control input:focus {
-            outline: none;
-            border: 0;
-        }
+            .form .control input:hover,
+            .form .control input:focus {
+                outline: none;
+                border: 0;
+            }
 
     .form .btn {
         width: 100%;
@@ -54,7 +53,6 @@ h1 {
         font-family: monospace;
         font-size: 16px;
         cursor: pointer;
-        transition: background 0.3s ease-in-out;
     }
 
 .block-cube {
@@ -126,3 +124,73 @@ h1 {
 .block-cube.block-input:focus-within .bg-inner {
     background: rgba(255, 255, 255, 0.8);
 }
+
+/* Logout Button */
+.btn.logout {
+    background: transparent;
+    border: 1px solid #fff; /* Subtle white border */
+    color: #fff;
+    padding: 14px 16px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+    /* Hover effect—adds a subtle glow */
+    .btn.logout:hover {
+        background: rgba(255, 255, 255, 0.15); /* Slight translucent effect */
+        color: #0ff; /* Matches neon accent */
+        border-color: #0ff;
+    }
+
+    /* Increase spacing below Validate button */
+    .btn.block-cube-hover {
+        margin-bottom: 30px; /* Creates better gap between Validate and Logout */   
+    }
+
+    .logout-section {
+        margin-top: 30px; /* Creates proper spacing below Validate button */
+    }
+
+/* Message Display Styling */
+.message {
+    padding: 16px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    display: inline-block; /* Ensures proper size */
+    box-sizing: border-box; /* Prevents overflow */
+    word-wrap: break-word; /* Keeps text inside */
+}
+
+    .message.success {
+        background: none;
+        border: none;
+        color: #00ffff; /* Neon cyan */
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+
+
+    /* Error Message */
+    .message.error {
+        background-color: rgba(255, 50, 50, 0.2);
+        border: 1px solid #f00;
+        color: #f00;
+    }
