@@ -3,56 +3,67 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upload Invoice</title>
+    <title>Invoice Format Validator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form class="form" method="POST" enctype="multipart/form-data" autocomplete="off">
-        <div class="control">
-            <h1>Upload Invoice</h1>
-        </div>
+    <div class="form">
+        <h1>Invoice Format Validator</h1>
 
+        <form method="POST" enctype="multipart/form-data">
+            <div class="control block-cube block-input">
+                <input type="text" name="program_id" placeholder="Program ID" required />
+                <div class="bg-top"><div class="bg-inner"></div></div>
+                <div class="bg-right"><div class="bg-inner"></div></div>
+                <div class="bg"><div class="bg-inner"></div></div>
+            </div>
+
+            <div class="control">
+                <input type="file" name="invoice_file" id="file-upload" accept=".csv" required />
+                <label for="file-upload" id="file-label">Choose CSV File</label>
+            </div>
+
+            <button type="submit" class="btn block-cube block-cube-hover validate-btn">
+                <div class="bg-top"><div class="bg-inner"></div></div>
+                <div class="bg-right"><div class="bg-inner"></div></div>
+                <div class="bg"><div class="bg-inner"></div></div>
+                <div class="text">Validate</div>
+            </button>
+        </form>
+
+        <!-- VALIDATION MESSAGE -->
         {% if message %}
-        <div class="control" style="color: red; text-align: center;">
-            {{ message }}
+        <div style="text-align: center; margin-top: 20px;">
+            <p style="font-weight: bold; color: {% if success %}#00ffff{% else %}#ff4c4c{% endif %};">
+                {{ message }}
+            </p>
         </div>
         {% endif %}
 
-        <div class="control block-cube block-input">
-            <input type="file" id="file-upload" name="invoice_file" required hidden>
-            <label for="file-upload" id="file-label">Choose Invoice File</label>
-            <div class="bg-top"><div class="bg-inner"></div></div>
-            <div class="bg-right"><div class="bg-inner"></div></div>
-            <div class="bg"><div class="bg-inner"></div></div>
+        <!-- SUCCESS MESSAGE -->
+        {% if success %}
+        <div style="text-align: center; margin-top: 10px;">
+            <h2 style="color: #00ffff;">Success!</h2>
+            <p style="color: #00ffff; font-weight: bold;">Invoice has been validated and no errors have been found.</p>
         </div>
+        {% endif %}
 
-        <div class="control block-cube block-input">
-            <input type="text" name="program_id" placeholder="Enter Program ID" required>
-            <div class="bg-top"><div class="bg-inner"></div></div>
-            <div class="bg-right"><div class="bg-inner"></div></div>
-            <div class="bg"><div class="bg-inner"></div></div>
+        <!-- ERROR MESSAGE -->
+        {% if success is not none and not success %}
+        <div style="margin-top: 20px; color: #ff4c4c;">
+            <h2>Errors:</h2>
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
         </div>
+        {% endif %}
 
-        <button class="btn block-cube block-cube-hover" type="submit">
-            <div class="bg-top"><div class="bg-inner"></div></div>
-            <div class="bg-right"><div class="bg-inner"></div></div>
-            <div class="bg"><div class="bg-inner"></div></div>
-            <div class="text">Validate Invoice</div>
-        </button>
-
-        <div class="control" style="text-align: center; margin-top: 20px;">
-            <a href="{{ url_for('logout') }}" style="color: #fff; text-decoration: underline;">Logout</a>
+        <!-- Logout Button -->
+        <div class="control logout-section">
+            <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
         </div>
-    </form>
-
-    <script>
-    const input = document.getElementById('file-upload');
-    const label = document.getElementById('file-label');
-
-    input.addEventListener('change', function () {
-      const fileName = this.files[0] ? this.files[0].name : 'Choose Invoice File';
-      label.textContent = fileName;
-    });
-    </script>
+    </div>
 </body>
 </html>
