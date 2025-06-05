@@ -57,6 +57,14 @@
                 <li>{{ error }}</li>
                 {% endfor %}
             </ul>
+
+            {% if error_report_filename %}
+            <div style="margin-top: 10px; margin-bottom: 40px">
+                <a href="{{ url_for('download_report', filename=error_report_filename) }}" style="color: #007bff; font-weight: bold;">
+                    Download Error Report (CSV)
+                </a>
+            </div>
+            {% endif %}
         </div>
         {% endif %}
 
