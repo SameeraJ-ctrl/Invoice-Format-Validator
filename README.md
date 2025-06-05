@@ -36,4 +36,4 @@ invoice-format-validator/
 ├── error_reports/           # Folder for storing generated error report CSVs
 │
 ├── README.md                # Project documentation (this file)
-└── requirements.txt         # List of dependencies (optional)
+
